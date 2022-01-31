@@ -64,3 +64,18 @@ psql postgres
 
 If there's an error saying that TABLE already exists, just create another database. I don't know why???
 
+Maybe check the migrations, you might have multiple migrations for creating the same table during development, remove those migrations.
+
+
+Password hasing: argon2
+
+Session keeping: express-session
+
+Connect to redis (for redis session storage): connect-redis. Redis v4 is incompatible with connect-redis, use ioredis instead
+
+Solve the problem of `Express.Session`: https://forum.freecodecamp.org/t/ts-namespace-global-express-has-no-exported-member-session/436838/11
+
+Install redis: `brew install redis`
+
+Start redis: `redis-server`
+
