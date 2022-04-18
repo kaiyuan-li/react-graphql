@@ -5,6 +5,8 @@ import mikroConfig from './mikro-orm.config'
 
 import express from 'express'
 import { ApolloServer } from 'apollo-server-express'
+// https://github.com/apollographql/apollo-server/issues/5341#issuecomment-961915680 for how to enable playground for cookie testing
+import {ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core'
 import { buildSchema } from 'type-graphql'
 import { HelloResolver } from './resolvers/hello'
 import { PostResolver } from './resolvers/post'
@@ -58,6 +60,7 @@ const main = async () => {
     }),
     // context will be accessable in all resolvers
     context: ({ req, res }): MyContext => ({ em: orm.em, req, res }),
+    plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
   })
 
   await apolloServer.start()

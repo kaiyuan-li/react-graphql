@@ -8,6 +8,7 @@ const constants_1 = require("./constants");
 const mikro_orm_config_1 = __importDefault(require("./mikro-orm.config"));
 const express_1 = __importDefault(require("express"));
 const apollo_server_express_1 = require("apollo-server-express");
+const apollo_server_core_1 = require("apollo-server-core");
 const type_graphql_1 = require("type-graphql");
 const hello_1 = require("./resolvers/hello");
 const post_1 = require("./resolvers/post");
@@ -43,6 +44,7 @@ const main = async () => {
             validate: false,
         }),
         context: ({ req, res }) => ({ em: orm.em, req, res }),
+        plugins: [(0, apollo_server_core_1.ApolloServerPluginLandingPageGraphQLPlayground)()],
     });
     await apolloServer.start();
     apolloServer.applyMiddleware({ app });
