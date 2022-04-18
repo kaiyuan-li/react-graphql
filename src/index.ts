@@ -13,7 +13,7 @@ import Redis from 'ioredis'
 import session from 'express-session'
 import connectRedis from 'connect-redis'
 import { MyContext } from './types'
-import cors from 'cors'
+// import cors from 'cors'
 
 const main = async () => {
   const orm = await MikroORM.init(mikroConfig)

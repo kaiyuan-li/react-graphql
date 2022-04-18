@@ -8,8 +8,23 @@ https://www.youtube.com/watch?v=I6ypD7qv3Z8
 * Prettier - Code formatter
 * Bracket pair colorizer 2
 
+## How to run the project
 
-## Project
+1. create postgres database
+```
+brew install postgresql
+brew services start postgresql
+pstl postgres
+# CREATE USER postgres SUPERUSER;
+# CREATE DATABASE lireddit WITH OWNER postgres;
+```
+1. do the database migration: `yarn migration:create`
+1. install redis: `brew install redis` and `brew services start redis`
+1. start the dev server: `yarn dev`
+
+
+
+## Project details
 
 ### Init
 
