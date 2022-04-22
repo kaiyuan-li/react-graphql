@@ -24,12 +24,6 @@ const main = async () => {
   // await orm.em.persistAndFlush(post);
 
   const app = express()
-  // app.use(
-  //   cors({
-  //     origin: 'https://studio.apollographql.com',
-  //     credentials: true,
-  //   }),
-  // )
 
   // session middle ware has to come before apollo because we will be using
   // session inside apollo
