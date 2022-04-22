@@ -96,7 +96,7 @@ export class UserResolver {
       }
       console.log('message: ', err.message)
     }
-    // set the cookie to enable login state.
+    // set the cookie to enable login state. 
     req.session.userId = user.id;
     return { user }
   }
